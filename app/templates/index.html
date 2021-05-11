@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Python IDE</title>
+<link rel="stylesheet" type="text/css" href="{% static 'w3.css' %}">
+</head>
+<body class="w3-green" style="font-family:'Verdana';">
+	<div id="login" class="w3-white w3-animate-top" style="width:300px;padding:20px;padding-right:30px;margin:auto;margin-top:50px;border-radius:10px;box-shadow:5px 5px 10px;text-align:center;display:{{ login|safe }};">
+		<h1>Login to IDE</h1>
+		<form action="/checklogin/" method="POST">
+			<input class="w3-input" type="email" placeholder="Your Email" style="margin-bottom:20px;" name="email">
+			<input class="w3-input" type="password" placeholder="Your Password" style="margin-bottom:20px;" name="password">
+			<input class="w3-button w3-hover-black w3-green" value="Login" type="submit" style="width:100%;">
+		</form>
+		<br>
+		<hr>
+		Didn't have an account?
+		<br><br>
+		<button onclick="document.getElementById('create').style.display='block';document.getElementById('login').style.display='none';" class="w3-button w3-hover-green w3-black">Create An Account</button>
+	</div>
+	<div id="create" class="w3-white w3-animate-top" style="width:300px;padding:20px;padding-right:30px;margin:auto;margin-top:50px;border-radius:10px;box-shadow:5px 5px 10px;text-align:center;display:{{ create|safe }};">
+		<h1>Create Account</h1>
+		<form action="/create/" method="POST">
+			<input type="text" placeholder="Your Name" name="name2" class="w3-input" style="margin-bottom:20px;">
+			<input type="email" placeholder="Your Email" name="email2" class="w3-input" style="margin-bottom:20px;">
+			<input type="password" placeholder="Your Password" name="password2" class="w3-input" style="margin-bottom:20px;">
+			<input class="w3-button w3-hover-black w3-green" value="Create" type="submit" style="width:100%;">
+		</form>
+		<br>
+		<hr>
+		Already have an account?
+		<br><br>
+		<button onclick="document.getElementById('create').style.display='none';document.getElementById('login').style.display='block';" class="w3-button w3-hover-green w3-black">Login Here</button>
+	</div>
+	<div id="otp" class="w3-white w3-animate-top" style="width:300px;padding:20px;padding-right:30px;margin:auto;margin-top:50px;border-radius:10px;box-shadow:5px 5px 10px;text-align:center;display:{{ verify|safe }};">
+		<h1>Verify Account</h1>
+		<form action="/verify/" method="POST">
+			<label style="">An OTP has been sent to {{ email|safe }}</label>
+			<input class="w3-input" type="text" placeholder="Enter OTP" style="margin-bottom:20px;margin-top:15px;" name="otp">
+			<input class="w3-button w3-hover-black w3-green" value="Verify" type="submit" style="width:100%;">
+		</form>
+		<br>
+		<a style="text-decoration:none;" href="#">Resend OTP</a>
+	</div>
+</body>
+</html>

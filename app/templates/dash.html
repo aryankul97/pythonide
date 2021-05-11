@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Python IDE</title>
+<link rel="stylesheet" type="text/css" href="{% static 'w3.css' %}">
+</head>
+<body class="w3-green" style="font-family:'Verdana';">
+	<div id="login" class="w3-white w3-animate-top" style="width:300px;padding:20px;padding-right:30px;margin:auto;margin-top:50px;border-radius:10px;box-shadow:5px 5px 10px;text-align:center;display:{{ login|safe }};">
+		<h2>Hi! {{ name|safe }}</h2>
+		<a href="/pythonide/" class="w3-button w3-hover-black w3-red">Open IDE</a>
+		<br>
+		<br>
+		<a href="/logout/" class="w3-button w3-black">Logout</a>
+	</div>
+</body>
+</html>

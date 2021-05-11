@@ -13,7 +13,7 @@ SECRET_KEY = 'f6oxaba&l(eh43v9j534=6lmugz+9fk2!z6xt#$2ma6$y@*yh$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aryankul98.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -107,3 +107,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_USE_TLS=True
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='shreshtharnd20@gmail.com'
+EMAIL_HOST_PASSWORD='womipbpedpanajrc'
+EMAIL_PORT=587
